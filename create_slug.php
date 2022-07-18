@@ -1,5 +1,5 @@
 <?php
-// create slug from string
+// function to create slug from string
 
 function createSlug($txt){
     $txt   = strtolower(trim($txt));
@@ -11,5 +11,10 @@ function createSlug($txt){
     $txt = str_replace(' ', '-', $txt);
     return str_replace(' ', '', $txt);
 }
+
+// how to use?
+$slug = createSlug('hallo iam programmer');
+// display results
+echo $slug;
 
 ?>
