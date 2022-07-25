@@ -2,8 +2,9 @@
 // function to create slug from string
 
 function createSlug($txt){
+    $txt   = preg_replace('/[^\p{L}\p{N}\s]/u', '', $txt); // clean symbol
     $txt   = strtolower(trim($txt));
-    $delme = array('"', '\'', '/', '\\', '_', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', ':', ';', ',', '.', '?', '=', '+', '[', ']', "“", "”", '"', "'");
+    $delme = array('"', '\'', '/', '\\', '_', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', ':', ';', ',', '.', '?', '=', '+', '[', ']', "|", "“", "”", '"', "'");
     foreach ($delme as $val) {
       $txt = str_replace($val, '', trim($txt));
     }
